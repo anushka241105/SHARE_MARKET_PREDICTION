@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Stock Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+  <script src="{{ url_for('static', path='/script.js') }}" defer></script>
+
+</head>
+<body>
+  <div class="dashboard">
+    <header>
+      <h1>Welcome, {{ user }} 👋</h1>
+      <a href="/logout" class="logout">Logout</a>
+    </header>
+
+    <section class="form-section">
+      <form action="/predict" method="post">
+        <label>Number of Days to Predict:</label>
+        <input type="number" name="days" min="1" max="60" required>
+
+        <label>Select Graph Type:</label>
+        <select name="graph_type" required>
+          <option value="line">Line Graph</option>
+          <option value="bar">Bar Graph</option>
+          <option value="scatter">Scatter Plot</option>
+          <option value="pie">Pie Chart</option>
+        </select>
+
+        <button type="submit">Predict 📈</button>
+      </form>
+    </section>
+
+    {% if graph %}
+    <h3>Prediction for next {{ days }} days ({{ graph_type }} graph)</h3>
+    <img src="data:image/png;base64,{{ graph }}" alt="Prediction Graph" style="width:100%; border-radius:10px;">
+{% elif error %}
+    <p style="color:red;">{{ error }}</p>
+{% endif %}
+
+  </div>
+</body>
+</html>
