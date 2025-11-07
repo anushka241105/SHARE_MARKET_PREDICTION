@@ -34,7 +34,7 @@ def load_and_forecast(n_days=5, graph_type="line"):
     if not os.path.exists(model_path) or not os.path.exists(scaler_path):
         raise FileNotFoundError("Model or scaler file missing.")
 
-    model = load_model(model_path)
+    model = load_model(model_path, compile=False)
     scaler = joblib.load(scaler_path)
 
     # ------------------------- Prepare Data -------------------------
@@ -47,8 +47,9 @@ def load_and_forecast(n_days=5, graph_type="line"):
     for _ in range(n_days):
         pred = model.predict(X_input, verbose=0)
         predictions.append(pred[0])
-        X_input = np.append(X_input[:, 1:, :], [[pred]], axis=1)
-
+        pred = pred.reshape(1, 1, 1)
+        X_input = np.append(X_input[:, 1:, :], pred, axis=1)
+        
     predictions = scaler.inverse_transform(predictions)
 
     # ------------------------- Generate Dates -------------------------
