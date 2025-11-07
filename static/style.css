@@ -1,21 +1,53 @@
+/* BODY */
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #0b132b, #1c2541, #3a506b);
   color: #f8f9fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;  /* navbar on top, content below */
+  align-items: center;
+  justify-content: flex-start;  /* prevents stretching */
 }
 
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  max-width: 100vw; /* ✅ keeps it inside screen */
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+}
+
+/* NAVBAR LINKS */
+.navbar a {
+  color: #f8f9fa;
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #1abc9c;
+}
+
+/* AUTH CONTAINER & DASHBOARD */
 .auth-container, .dashboard {
   background: rgba(255, 255, 255, 0.1);
-  padding: 2rem 3rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  text-align: center;
-  width: 400px;
-}
+  padding: 1.5rem 2rem;
 
 input, select, button {
   width: 100%;
