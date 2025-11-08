@@ -7,3 +7,4 @@ stockenv/
 # Ignore cache files
 __pycache__/
 *.pyc
+users.db

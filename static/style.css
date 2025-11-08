@@ -48,7 +48,7 @@ body {
 .auth-container, .dashboard {
   background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem 2rem;
-
+}
 input, select, button {
   width: 100%;
   padding: 10px;
