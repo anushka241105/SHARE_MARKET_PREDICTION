@@ -5,7 +5,7 @@ from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 import sqlite3
 import uvicorn
-from lstm_in_use import load_and_forecast  # ✅ Correct import
+from lstm_in_use import load_and_forecast 
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
