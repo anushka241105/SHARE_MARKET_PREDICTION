@@ -14,3 +14,12 @@ Modern frontend (HTML + CSS + JS)
 
 Real-time prediction visualization
 
+How It Works
+
+Data is preprocessed → scaled → sequenced
+
+LSTM model predicts the next closing price
+
+FastAPI serves the prediction through an API route
+
+Frontend displays the result to the user
