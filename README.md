@@ -33,3 +33,11 @@ git clone https://github.com/anushka241105/Pet-Face-Classifier.git
 cd Pet-Face-Classifier
 
 ---
+
+Tech Stack
+
+Python, FastAPI
+
+TensorFlow, LSTM
+
+HTML, CSS, JavaScript
