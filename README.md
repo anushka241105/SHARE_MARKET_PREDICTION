@@ -23,3 +23,13 @@ LSTM model predicts the next closing price
 FastAPI serves the prediction through an API route
 
 Frontend displays the result to the user
+
+
+## **Installation**
+
+1. **Clone the repo**  
+```bash
+git clone https://github.com/anushka241105/Pet-Face-Classifier.git
+cd Pet-Face-Classifier
+
+---
